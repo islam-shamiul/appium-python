@@ -4,13 +4,7 @@ import time
 from selenium.common.exceptions import ElementNotVisibleException, ElementNotSelectableException, NoSuchElementException
 from selenium.webdriver.support.wait import WebDriverWait
 
-"""
-1.) Mobile Browser version and ChromeDriver or respective Browser Driver should be in same version 
-2.) 
-Two Ways of Identifying locators on webview i) open chrome browser and type "chrome://inspect/#devices" ii) Use Browser 
-inspectors 
 
-"""
 desired_caps = {}
 desired_caps['platformName'] = 'Android'
 desired_caps['platformVersion'] = '10'
@@ -65,7 +59,7 @@ for appType in appContexts:
 
 # 6. Do testing on Webview screen in chrome browser or any if we want
 
-enterText = wait.until(lambda x: x.find_element_by_id("user_input"))
+enterText = wait.until(lambda x: x.find_element_by_class_name("form-control"))
 enterText.click()
 enterText.send_keys("Code2Lead")
 
